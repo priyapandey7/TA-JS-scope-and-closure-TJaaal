@@ -20,17 +20,18 @@ Find the output of the code snippets below:
 let numA = 21,
   numB = 30;
 console.log(numA + numB); //51
+// let ,in declaration phase it is not been initialize but execution it will give an output.
 ```
 
 Find the output of the code snippets below:
 
 ```js
-console.log(sayHello()); // undefined
+console.log(sayHello()); //hello
 function sayHello() {
-  console.log("Hey");
+  console.log("Hey"); //undefind
 }
 function sayHello() {
-  console.log("Hello");
+  console.log("Hello"); //undefind
 }
 ```
 
@@ -38,7 +39,7 @@ Find the output of the code snippets below:
 
 ```js
 let username = "Tyrion";
-sayHello(); // undefined
+sayHello(); //Tyrion
 function sayHello() {
   console.log(username);
 }
@@ -47,10 +48,10 @@ function sayHello() {
 Find the output of the code snippets below:
 
 ```js
-sayHello(); // undefined
+sayHello(); // Tryion
 let username = "Tyrion";
 function sayHello() {
-  console.log(username);
+  console.log(username); //undefnd
 }
 ```
 
@@ -58,7 +59,7 @@ Find the output of the code snippets below:
 
 ```js
 let username = "Tyrion";
-sayHello(); // undefind
+sayHello(); //sayHello is not define
 let sayHello = () => {
   console.log(username);
 };
@@ -67,7 +68,7 @@ let sayHello = () => {
 Find the output of the code snippets below:
 
 ```js
-sayHello(); // OUTPUT
+sayHello(); //Error bacause we are calling a function before defining it.and function we are defineig it function declaration not a function expression.
 let username = "Tyrion";
 let sayHello = () => {
   console.log(username);
@@ -77,7 +78,7 @@ let sayHello = () => {
 Find the output of the code snippets below:
 
 ```js
-sayHello(); // OUTPUT
+sayHello(); // error."same from upper one"
 var username = "Tyrion";
 let sayHello = () => {
   console.log(username);
@@ -88,7 +89,7 @@ Find the output of the code snippets below:
 
 ```js
 var username = "Tyrion";
-sayHello(); // OUTPUT
+sayHello(); // error we are calling a fumction before defining it.
 let sayHello = () => {
   console.log(username);
 };
@@ -102,7 +103,7 @@ let sayHello = () => {
   console.log(username);
   var username = "John";
 };
-sayHello(); // OUTPUT
+sayHello(); //undefined
 ```
 
 Find the output of the code snippets below:
@@ -113,7 +114,7 @@ let sayHello = () => {
   var username = "John";
   console.log(username);
 };
-sayHello(); // OUTPUT
+sayHello(); // John
 ```
 
 Find the output of the code snippets below:
@@ -124,5 +125,5 @@ let sayHello = () => {
   console.log(username);
   let username = "John";
 };
-sayHello(); // OUTPUT
+sayHello(); //  Cannot access 'username' before initialization
 ```
