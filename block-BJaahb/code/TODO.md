@@ -43,8 +43,8 @@ function makeColorChanger(color) {
   };
 }
 
-let blue = makeColorChanger('blue');
-let tomato = makeColorChanger('tomato');
+let blue = makeColorChanger("blue");
+let tomato = makeColorChanger("tomato");
 
 blue();
 tomato();
