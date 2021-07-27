@@ -53,7 +53,11 @@ let tomato = makeColorChanger("tomato");
 blue(); //blue
 tomato(); //tomato
 
-![](./img/img-3.jpg)
+
 
 // What will be the background color after the execution of last line
+tomato.
+
 ```
+
+![](./img/img-3.jpg);
