@@ -26,9 +26,9 @@ function delay(cb, milis) {
 3. Write a function with a closure. The first function should only take one argument, someone's last name, and return the inner function. The returned `inner` function should take one more argument, someone's first name. When inner function when called it should console.log both the first name and the last name with a space.
 
 ```js
-function lastName(lastName) {
-  return function (fn) {
-    console.log(` ${firstName} ${lastName}`);
+function lastName(lastname) {
+  return function (firstname) {
+    console.log(`${firstName} ${lastName}`);
   };
 }
 
@@ -46,20 +46,22 @@ lastNameLee("Lynne"); //logs 'Lynne Lee'
 4. Create a `storyWriter` function that returns an object with two methods. One method, `addWords` adds a word to your story and returns the story while the other one, `erase`, resets the story back to an empty string. Here is an implementation:
 
 ```js
-let story = "";
+
 function storyWriter() {
+  let story = "";
   return {
     addWords: function (word) {
       story += word;
       return story;
     },
-    earage: function () {
+    erase: function () {
       story = "";
       return story;
-    },
+    }
   };
 }
 
+function
 // Test
 let farmLoveStory = storyWriter();
 farmLoveStory.addWords("There was once a lonely cow."); // 'There was once a lonely cow.'
@@ -78,10 +80,13 @@ When `forEach` function is called it returns another function. When the returned
 
 ```js
 function forEach() {
-  // Your code goes here
+  let index = 0;
+  return function () {
+    return arr[index++];
+  };
 }
 
-let next = [1, 2, 3, 4, 5];
+let next = forEach[(1, 2, 3, 4, 5)];
 next(); // 1
 next(); // 2
 next(); // 3
@@ -95,7 +100,9 @@ The returned function accepts a string `prefix` and returns `prefix` and `title`
 
 ```js
 function addDesignation(title) {
-  // your code goes here
+  return function (prfix) {
+    return `${prifix} ${title}`;
+  };
 }
 
 let sales = addDesignation("Salesman");
@@ -113,9 +120,20 @@ manager("Head"); // Head Manager
 - `current` will return the current salary returns the updated salary
 
 ```js
-function changeSalary() {
-  // Your code goes here
+function changeSalary(currentSalary) {
+  return {
+    raise(){
+      retrun currentSalary + 500;
+    },
+    lower (){
+  retrun currentSalary - 500;
+    },
+    cureent(){
+      retrun currentSalary ;
+    }
+  }
 }
+
 
 let sam = changeSalary(2000);
 sam.raise(); // 2500
@@ -132,6 +150,22 @@ arya.lower(); // 3500
 
 ```js
 // Your code goes here
+function nameFactory(firstName,lastName) {
+
+  return {
+    getdullName(){
+      retrun `${firstNam} ${lastName}`;
+    },
+    setFirstName (fn){
+      let function = fn
+  retrun `${firstNam} ${lastName}`;
+    },
+    setLastName(){
+      let function = lastName
+     return  `${firstNam} ${lastName}`;
+    }
+  }
+}
 
 let arya = nameFactory("Arya", "Stark");
 arya.getFullName(); // "Arya Stark"
