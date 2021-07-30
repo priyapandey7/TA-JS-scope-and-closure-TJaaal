@@ -41,7 +41,7 @@ var two = addOne(1);
 console.log(one, two); //Unexpected identifier
 
 
-![name](./hello.jpg)
+// ![name](./hello.jpg)
 ```
 
 4. Make a Execution Context Diagram for the following JS and write the output.
@@ -133,6 +133,7 @@ function isAwesome() {
   console.log(awesome);
 }
 isAwesome(); //undefined
+// we are not assigning value.
 ```
 
 11. What will be the output of the following
@@ -158,6 +159,7 @@ function sayHello() {
 sayHello();
 
 console.log(name); //AryaStark
+//
 ```
 
 13. Guess the output of the code below with a reason.
@@ -185,6 +187,7 @@ for (var i = 0; i < 20; i++) {
   //
 }
 console.log(i); //20
+// var doesn't create scope inside block so we can acces i
 ```
 
 16. Guess the output of the code below with a reason.
@@ -193,7 +196,7 @@ console.log(i); //20
 for (let i = 0; i < 20; i++) {
   //
 }
-console.log(i); //20
+console.log(i); // i is not define
 ```
 
 17. Guess the output and the reason behind that.
@@ -206,7 +209,7 @@ function sample() {
   console.log(username);
 }
 sample(); //John Snow
-//because var create function scoped/
+//because block scoped/
 ```
 
 18. Guess the output and the reason behind that.
@@ -250,7 +253,7 @@ function sample() {
   console.log(username, "second");
 }
 sample(); //John Snow first
-// Arya Stark second
+// Arya Stark second because  it is block scope.vardoes;nt creat block inside the scope.
 ```
 
 21. Guess the output and the reason behind that.
@@ -359,6 +362,7 @@ const half = (num) => {
 };
 
 let allFunctions = [addOne, subTwo, multiplyThree, addOne, multiplyThree, half];
+allFunctions.reduce((acc, cv) => cv(acc), 100);
 
 // Answer is: 447
 ```
