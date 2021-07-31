@@ -1,15 +1,40 @@
 1. Construct a function intersection that compares input arrays and returns a new array with elements found in all of the inputs. You can only use reduce method to do this.
 
 ```js
-function intersection(arrays) {}
+// function intersection(arrays) {}
+const intersection = (arr) => {
+  let [first, ...rest] = arr;
+  rest = rest.map((x) => new Set(x));
+  return first.filter((x) => rest.every((a) => a.has(x)));
+};
+//  if (arrMerged[2] !== undefined){
+
+//     newArr = arrMerged[0].map((elem) => {
+//       if (arrMerged[1].includes(elem) && arrMerged[2].includes(elem)){
+//         return elem;
+//       }
+//     })
+//   }
+
+//   else {
+//     newArr = arrMerged[0].map((elem) => {
+//       if (arrMerged[1].includes(elem)){
+//         return elem;
+//       }
+//     })
+//   }
+
+//   newArr.forEach((elem) => {
+//     if (elem !== undefined){
+//       finalArr.push(elem)
+//     }
+//   })
+//   return finalArr;
+// }
 
 // Test
 console.log(
-  intersection(
-    [5, 10, 15, 20],
-    [15, 88, 1, 5, 7],
-    [1, 10, 15, 5, 20]
-  )
+  intersection([5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20])
 ); // should log: [5, 15]
 ```
 
@@ -19,8 +44,6 @@ console.log(
 function union(arrays) {}
 
 // Test
-console.log(
-  union([5, 10, 15], [15, 88, 1, 5, 7], [100, 15, 10, 1, 5])
-);
+console.log(union([5, 10, 15], [15, 88, 1, 5, 7], [100, 15, 10, 1, 5]));
 // should log: [5, 10, 15, 88, 1, 7, 100]
 ```
